@@ -1,6 +1,4 @@
 # 0kb base
-FROM scratch
+FROM nginx
 # add the binary built outside
-ADD main /
-# run the binary
-CMD ["/main"]
+
