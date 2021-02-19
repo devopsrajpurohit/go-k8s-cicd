@@ -4,7 +4,7 @@ phases:
   pre_build:
     commands:
       # download and configure AWS IAM Authenticator
-      - curl  -LO  -o /usr/local/bin/kubectl  https://dl.k8s.io/release/v1.20.0/bin/linux/amd64/kubectl
+      - curl  -L  -o /usr/local/bin/kubectl  https://dl.k8s.io/release/v1.20.0/bin/linux/amd64/kubectl
       - curl -o /usr/local/bin/aws-iam-authenticator https://amazon-eks.s3-us-west-2.amazonaws.com/1.11.5/2018-12-06/bin/linux/amd64/aws-iam-authenticator
       - chmod 755 /usr/local/bin/aws-iam-authenticator
       - chmod 755 /usr/local/bin/kubectl
