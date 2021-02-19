@@ -11,12 +11,11 @@ phases:
     commands:
       # build go app with static lin
       # build lightweight app image which only contains the binary
-      - docker build . -t $ECR_REPO:latest
+      - docker build . -t $ECR_REPO/$SERVICE:$COMMIT_HASH
       # tag image
-      - docker tag $ECR_REPO:latest $ECR_REPO:$COMMIT_HASH
+      
   post_build:
     commands:
       # push to ECR
-      - docker push $ECR_REPO:latest
-      - docker push $ECR_REPO:$COMMIT_HASH
+      - docker push $ECR_REPO/$SERVICE:$COMMIT_HASH
 
