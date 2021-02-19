@@ -1,4 +1,4 @@
 # 0kb base
-FROM nginx
+FROM public.ecr.aws/nginx/nginx:latest
 # add the binary built outside
 
