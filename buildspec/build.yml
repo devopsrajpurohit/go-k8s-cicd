@@ -9,8 +9,7 @@ phases:
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
   build:
     commands:
-      # build go app with static link
-      - docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp -e CGO_ENABLED=0 -e GOOS=linux golang:alpine go build -a -installsuffix cgo -o main -v .
+      # build go app with static lin
       # build lightweight app image which only contains the binary
       - docker build . -t $ECR_REPO:latest
       # tag image
